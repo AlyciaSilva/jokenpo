@@ -1,20 +1,12 @@
 #Jogo de pedra papel e tesoura
 import random, emojis
 def resultado (a,b):
-    if lista[a] == b - 1:
+    if a == b - 1:
         print(emojis.encode('Empate:exclamation::exclamation:'))
-    elif lista [a] == lista[0] and escolha == 2: #usuário ganha
+    elif (a == 0 and b == 2) or (a == 1 and b == 0) or (a == 2 and b == 1): #usuário ganha
         print(emojis.encode('Parabéns:unamused:, você ganhou:rage:'))
-    elif lista [a] == lista[1] and escolha == 1: #máquina ganha
-        print(emojis.encode('Você perdeu:sunglasses::laughing::stuck_out_tongue_closed_eyes:!!'))        
-    elif lista [a] == lista[2] and escolha == 1: #usuário ganha
-        print(emojis.encode('Parabéns:unamused:, você ganhou:rage:'))
-    elif lista [a] == lista[0] and escolha == 3:# máquina ganha
-        print(emojis.encode('Você perdeu:sunglasses::laughing::stuck_out_tongue_closed_eyes:!!'))       
-    elif lista [a] == lista[1] and escolha == 3:#usuário ganha
-        print(emojis.encode('Parabéns:unamused:, você ganhou:rage:'))
-    elif lista [a] == lista[2] and escolha == 2:#máquina ganha
-        print(emojis.encode('Você perdeu:sunglasses::laughing::stuck_out_tongue_closed_eyes:!!'))       
+    else: #máquina ganha
+        print(emojis.encode('Você perdeu:sunglasses::laughing::stuck_out_tongue_closed_eyes:!!'))   
 
 print('Jogo de jokenpo')
 print(emojis.encode('(1):fist:\n(2):hand:\n(3):v: '))
@@ -24,4 +16,6 @@ if escolha != 1 and escolha != 2 and escolha != 3:
 else:
     lista = ['Pedra', 'Papel', 'Tesoura']
     sorteado = random.randint(0,2)
+    print('Máquina: ', lista[1])
     resultado(sorteado,escolha)
+    
